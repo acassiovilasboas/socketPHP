@@ -1,0 +1,19 @@
+{
+    "name": "acassio/sistemas-distribuidos",
+    "authors": [
+        {
+            "name": "Acassio Vilas Boas",
+            "email": "acassio.dev@outlook.com"
+        }
+    ],
+    "require": {
+        "cboden/ratchet": "^0.4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rules\\" : "rules/",
+            "Middleware\\" : "middleare/",
+            "Interface\\" : "interface/"
+        }
+    }
+}

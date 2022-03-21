@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket EchoServer</title>
+</head>
+
+<body>
+    <select name="operacao" id="cadastrar_conta">
+        <option value="">Selecione</option>
+        <option value="cadastrar_conta">Cadastrar Conta</option>
+    </select>
+    <label for="agencia">Agencia: </label>
+    <input id="agencia" type="text" placeholder="Digite aqui" />
+    <label for="conta">Conta: </label>
+    <input id="conta" type="text" placeholder="Digite aqui" />
+    <label for="cpf">CPF: </label>
+    <input id="cpf" type="text" placeholder="Digite aqui" />
+
+    <input type="button" id="button" value="enviar">
+
+    <div id="response"></div>
+    <script>
+        let response = document.getElementById('response');
+        const socket = new WebSocket('ws://localhost:9940/echo');
+
+        socket.addEventListener('error', () => {
+            console.log('error: ' + error)
+        })
+
+        // Ao estabelecer a conexão enviamos uma mensagem pro servidor
+        socket.addEventListener('open', function () {
+            socket.send('Conexão estabelecida.');
+        });
+
+        // Callback disparado sempre que o servidor retornar uma mensagem
+        socket.addEventListener('message', function (event) {
+            response.insertAdjacentHTML('beforeend', "<p><b>Servidor diz: </b>" + event.data + "</p>");
+        });
+
+        document.querySelector("#button").addEventListener('click', function (event) {      
+        let operacao = document.querySelector("#cadastrar_conta").value
+        let agencia = document.querySelector("#agencia").value
+        let conta = document.querySelector("#conta").value
+        let cpf = document.querySelector("#cpf").value
+        let input = operacao + agencia + conta + cpf
+            socket.send(input);
+        });
+    </script>
+</body>
+
+</html>
