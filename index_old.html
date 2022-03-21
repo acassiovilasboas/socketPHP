@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket EchoServer</title>
+</head>
+
+<body>
+    <select name="operation" id="operation">
+        <option value="">Selecione</option>
+        <option value="cadastrar_conta">Cadastrar Conta</option>
+    </select>
+    <label for="agency">Agencia: </label>
+    <input class="inputData" id="agency" name="agency" type="text" placeholder="0001" />
+    <label for="account">Conta: </label>
+    <input class="inputData" id="account" name="account" type="text" placeholder="123456" />
+    <label for="cpf">CPF: </label>
+    <input class="inputData" id="cpf" name="cpf" type="text" placeholder="00011122233" />
+
+    <input type="button" id="button" value="enviar">
+
+    <div id="response"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
