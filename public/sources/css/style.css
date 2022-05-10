@@ -1,0 +1,11 @@
+.btn-warning {
+    color: white;
+}
+
+.btn-warning:hover {
+    color: white;
+}
+
+.error {
+    border: 1px solid red;
+}

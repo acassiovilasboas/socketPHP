@@ -1,11 +1,12 @@
 <?php
 
-require './vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__  . '/init.php';
 
-use Middleware\PubSub;
+use App\Middleware\PubSub;
 
-require './middleware/PubSub.php';
+// require './middleware/PubSub.php';
 
-$app = new Ratchet\App('localhost', 9980);
+$app = new Ratchet\App(CONF_SERVER_HOST, CONF_SERVER_PORT);
 $app->route('/echo', new PubSub, ['*']);
 $app->run();

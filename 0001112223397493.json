@@ -1,8 +1,0 @@
-{
-    "ip": "127.000.000.001:5500",
-    "operation": "cadastrar_conta",
-    "agency": "0001",
-    "account": "123456",
-    "cpf": "0001112223397493",
-    "checksum": false
-}

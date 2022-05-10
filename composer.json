@@ -11,9 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Rules\\" : "rules/",
-            "Middleware\\" : "middleare/",
-            "Interface\\" : "interface/"
+            "App\\" : "src/"
         }
     }
 }
